@@ -1,0 +1,9 @@
+name: Hello world Actions
+on: [push]
+jobs:
+    hello-world-Actions:
+        runs-on: ubuntu-latest
+        steps:
+            - run: echo "Hello world!!!!!"
+            - run: echo "Viva el crus Azul!!!!!"
+            - run: echo "la mama de brando🤣"
