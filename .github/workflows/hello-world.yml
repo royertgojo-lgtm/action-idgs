@@ -8,3 +8,11 @@ jobs:
         run: echo "Hello, World!"
       - run: echo "Ando probando actions XD"
       - run: echo "Siuuuuuuuuuuuu"
+      - name: crear un archivos
+        run: touch file1.txt
+      - name: guardar el listado de archivos
+        run: ls -al >file2.txt
+      - run: echo "agregar una linea a file2.txt" >> file.txt
+      - run: cat file2.txt 
+      - run: ls -al
+      
