@@ -1,14 +1,25 @@
 name: Run Python Script
+
 on: [push]
+
 jobs:
   runs-python-script:
     runs-on: ubuntu-latest
+
     steps:
-        - name: Inicio
-          run: echo "Comienza Action"
-        - name: Clona Repo
-          uses: actions/checkout@v6
-        - name: muestra archivos
-          run: ls -al
-        - name: Ejecuta Scripts
-          run: python app-py
+      - name: Inicio
+        run: echo "Comienza Action"
+
+      - name: Clona Repo
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Mostrar archivos
+        run: ls -al
+
+      - name: Ejecuta Script
+        run: python app.py
