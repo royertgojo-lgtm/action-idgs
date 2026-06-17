@@ -2,7 +2,7 @@ name: Run Python Script
 on: [push]
 jobs:
   runs-python-script:
-    runs-on: ubuntu_latest
+    runs-on: ubuntu-latest
     steps:
         - name: Inicio
           run: echo "Comienza Action"
