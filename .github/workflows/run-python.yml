@@ -21,5 +21,8 @@ jobs:
       - name: Mostrar archivos
         run: ls -al
 
+      - name: Definir variables
+        run: echo "USERNAME=${{ github.actor }}" >> $GITHUB_ENV
+
       - name: Ejecuta Script
         run: python app.py
