@@ -4,6 +4,7 @@ on: [push]
 
 jobs:
   runs-python-script:
+    
     runs-on: ubuntu-latest
 
     steps:
@@ -20,9 +21,34 @@ jobs:
 
       - name: Mostrar archivos
         run: ls -al
+        
 
       - name: Definir variables
         run: echo "USERNAME=${{ github.actor }}" >> $GITHUB_ENV
 
       - name: Ejecuta Script
         run: python app.py
+  runs-javascript-script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Inicio
+        run: echo "Comienza Action"
+
+      - name: Clona Repo
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Mostrar archivos
+        run: ls -al
+        
+
+      - name: Definir variables
+        run: echo "USERNAME=${{ github.actor }}" >> $GITHUB_ENV
+
+      - name: Ejecuta javascript
+        run: node app.js       
